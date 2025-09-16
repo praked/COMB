@@ -1,7 +1,6 @@
 # COMB — Common Open Modular robotic platform for Bees
 
-Open-source, modular hardware + firmware to non-invasively access and study honey-bee colonies using low-cost, reproducible components.
-
+COMB is an open-source, modular robotic platform for experimental access to honey bee colonies
 > License: MIT
 
 ---
