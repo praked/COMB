@@ -93,3 +93,9 @@ addpath(genpath(pwd));
 dance_model
 write_dance_model_to_cpp_variable
 ```
+
+### 4. Configuration
+
+- Adjust pin mappings and constants in commands.h, gpio.h, and main firmware files.
+- Virtual encoder ticks per revolution must match controller firmware expectations.
+- Ensure all modules share common ground and correct voltage rails.
