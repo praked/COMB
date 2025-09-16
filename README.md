@@ -71,4 +71,25 @@ git clone https://github.com/praked/COMB
 cd COMB
 
 ```
+### 2. Build firmware
+- DanceRobot / ScannerRobot / WingFlapperSanDiego
+  Use ESP-IDF:
+```bash
+idf.py set-target esp32
+idf.py build
+idf.py -p <PORT> flash
+```
 
+- Virtual encoder (Teensy)
+  Open Encoder_Code/virtual_motor_encoder_teensy.ino in Arduino IDE, select your Teensy board, and upload.
+
+- Keypad firmware
+  Open Keypad_Design_Code/Keypad in Arduino IDE, set pin mapping, and upload.
+
+### 3. MATLAB tools
+```matlab
+cd('Dance_Model_Matlab');
+addpath(genpath(pwd));
+dance_model
+write_dance_model_to_cpp_variable
+```
