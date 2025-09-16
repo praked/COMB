@@ -17,12 +17,12 @@ Open-source, modular hardware + firmware to non-invasively access and study hone
 
 ## Repository layout
 
+```text
 COMB/
-├─ Controller_Code/ # Main microcontroller firmware
+├─ Controller_Code/                 # Main microcontroller firmware
 ├─ Encoder_Code/
-│ └─ virtual_motor_encoder_teensy/ # Teensy-based virtual encoder utility
-├─ Keypad_Design_Code/ # Keypad UI firmware
-├─ Dance_Model_Matlab/ # MATLAB models and analysis
+│  └─ virtual_motor_encoder_teensy/ # Teensy-based virtual encoder utility
+├─ Keypad_Design_Code/              # Keypad UI firmware
+├─ Dance_Model_Matlab/              # MATLAB models and analysis
 ├─ LICENSE
 └─ README.md
-
