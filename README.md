@@ -18,11 +18,57 @@ Open-source, modular hardware + firmware to non-invasively access and study hone
 ## Repository layout
 
 ```text
-COMB/
-├─ Controller_Code/                 # Main microcontroller firmware
+COMB-main/
+├─ Controller_Code/                 # Firmware for different robot modules
+│  ├─ DanceRobot/                   # Dance communication robot
+│  ├─ ScannerRobot/                 # Scanner robot for colony mapping
+│  ├─ WingFlapperSanDiego/          # Wing flapper prototype
+│  └─ README.md
+│
 ├─ Encoder_Code/
-│  └─ virtual_motor_encoder_teensy/ # Teensy-based virtual encoder utility
-├─ Keypad_Design_Code/              # Keypad UI firmware
-├─ Dance_Model_Matlab/              # MATLAB models and analysis
+│  └─ virtual_motor_encoder_teensy/ # Teensy sketch emulating motor encoder signals
+│
+├─ Keypad_Design_Code/
+│  ├─ Keypad/                       # Keypad firmware and build files
+│  └─ Readme.md
+│
+├─ Dance_Model_Matlab/              # MATLAB models and tools
+│  ├─ dance_model.m
+│  └─ write_dance_model_to_cpp_variable.m
+│
 ├─ LICENSE
 └─ README.md
+```
+
+---
+
+## Features
+
+- **Controller firmware** for multiple robot types (dance, scanner, wing-flapper).
+- **Virtual encoder utility** to simulate quadrature signals using a Teensy board.
+- **Keypad firmware** for modular user input.
+- **MATLAB scripts** to define and export dance models to C++.
+- Fully open-source under MIT License.
+
+---
+
+## Requirements
+
+- **MCUs:** ESP-IDF supported boards (for controller code), Teensy (for encoder utility), Arduino-compatible boards (for keypad).
+- **Toolchains:**
+  - [ESP-IDF](https://docs.espressif.com/projects/esp-idf) for controller code.
+  - [Arduino IDE](https://www.arduino.cc/en/software) or PlatformIO for Teensy and keypad.
+  - [MATLAB](https://www.mathworks.com/products/matlab.html) (R2020a+) for model scripts.
+
+---
+
+## Quick start
+
+### 1. Clone
+
+```bash
+git clone https://github.com/praked/COMB
+cd COMB
+
+```
+
