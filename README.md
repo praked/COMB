@@ -20,9 +20,9 @@ Open-source, modular hardware + firmware to non-invasively access and study hone
 ```text
 COMB-main/
 ├─ Controller_Code/                 # Firmware for different robot modules
-│  ├─ DanceRobot/                   # Dance communication robot
-│  ├─ ScannerRobot/                 # Scanner robot for colony mapping
-│  ├─ WingFlapperSanDiego/          # Wing flapper prototype
+│  ├─ DanceRobot/                   # Waggle dance robot (simulates bee dances)
+│  ├─ ScannerRobot/                 # Scanner robot (maps and inspects comb structures)
+│  ├─ WingFlapperSanDiego/          # Wing flapper robot (PCB wing actuators for local signaling)
 │  └─ README.md
 │
 ├─ Encoder_Code/
