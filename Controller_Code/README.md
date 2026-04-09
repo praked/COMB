@@ -122,13 +122,26 @@ cd Controller_Code/DanceRobot    # or ScannerRobot, WingFlapperSanDiego,
 idf.py set-target esp32
 ```
 
-### 3. (Optional) Adjust configuration
+### 3. Configure with menuconfig
 
 ```bash
 idf.py menuconfig
 ```
 
-You can tweak FreeRTOS tick rate, UART buffer sizes, log levels, and other SDK options here. For most cases the defaults are fine.
+> **⚠️ Important — Disable the watchdog timers.** The firmware's tight motor-control loops and ISR-heavy design will frequently trigger the default ESP-IDF watchdog, causing unexpected resets, `Task watchdog got triggered` messages, and **Guru Meditation Errors** (e.g. `Guru Meditation Error: Core 0 panic'ed (Interrupt wdt timeout on CPU0)`) on the serial monitor. Before building, disable both watchdogs in menuconfig:
+>
+> 1. Navigate to **Component config → ESP System Settings** (or **Component config → Common ESP-related** in some IDF versions).
+> 2. **Uncheck** *Interrupt watchdog* (`CONFIG_ESP_INT_WDT`).
+> 3. **Uncheck** *Initialize Task Watchdog Timer on startup* (`CONFIG_ESP_TASK_WDT_INIT`).
+>
+> Alternatively, you can add these lines to an `sdkconfig.defaults` file in the project root:
+> ```
+> CONFIG_ESP_INT_WDT=n
+> CONFIG_ESP_TASK_WDT_INIT=n
+> ```
+> Then delete any existing `sdkconfig` and rebuild — the defaults file will be picked up automatically.
+
+You can also tweak FreeRTOS tick rate, UART buffer sizes, log levels, and other SDK options here.
 
 ### 4. Build
 
@@ -244,6 +257,7 @@ The keypad also drives a serial LCD display (via I²C using the DFRobot_LCD libr
 ## Troubleshooting
 
 - **Build fails with missing headers** (`driver/periph_ctrl.h`, `soc/timer_group_struct.h`) — you are likely using ESP-IDF v5.x. Switch to v4.3.
+- **`Task watchdog got triggered` / `Guru Meditation Error` / board keeps resetting** — the watchdog timers are not disabled. The Guru Meditation Error (typically `Interrupt wdt timeout on CPU0` or `InstrFetchProhibited`) is the ESP32's panic handler crashing the system after the watchdog fires. Run `idf.py menuconfig` and disable both the interrupt watchdog and the task watchdog (see step 3 above), then rebuild and reflash.
 - **Port not found** — install the correct USB-to-UART driver (CP210x or CH340) for your ESP32 dev board.
 - **Flash fails / times out** — hold the **BOOT** button while pressing **EN** to force the chip into download mode, then retry `idf.py flash`.
 - **Motors don't move** — verify the ENABLE pin is driven high and that your stepper driver is wired correctly (STEP, DIR, GND).
