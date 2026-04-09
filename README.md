@@ -7,6 +7,7 @@ COMB provides firmware, tools, and design files for building robots that can ope
 Hardware files (CAD, PCB designs, and mechanical parts) are available on the [Zenodo Repository](https://zenodo.org/records/13693195).
 
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ClRFNMyWJLM?si=pfAx9SxyGi00Pl7J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Motivation
 
