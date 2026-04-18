@@ -17,7 +17,6 @@ Hardware files (CAD, PCB designs, and mechanical parts) are available on the [Ze
   <br/>
   <em>▶ Click the image above to watch the demo on YouTube</em>
 </p> -->
-https://github.com/user-attachments/assets/8cfa3cd7-d7c5-49a2-9e20-cec200af73bd
 ---
 
 ## Motivation
