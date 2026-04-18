@@ -10,14 +10,14 @@ Hardware files (CAD, PCB designs, and mechanical parts) are available on the [Ze
 
 ## Demo
 
-<p align="center">
+<!-- <p align="center">
   <a href="https://www.youtube.com/watch?v=ClRFNMyWJLM">
     <img src="https://img.youtube.com/vi/ClRFNMyWJLM/maxresdefault.jpg" alt="COMB Platform Demo" width="600"/>
   </a>
   <br/>
   <em>▶ Click the image above to watch the demo on YouTube</em>
-</p>
-
+</p> -->
+https://github.com/user-attachments/assets/8cfa3cd7-d7c5-49a2-9e20-cec200af73bd
 ---
 
 ## Motivation
